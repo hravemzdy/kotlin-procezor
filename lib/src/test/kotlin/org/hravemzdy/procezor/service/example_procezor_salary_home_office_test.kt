@@ -79,13 +79,13 @@ class ServiceProcezorExampleWithSalaryHomeOfficeTest : Spek({
                 is Ok -> {
                     val articleSymbol = result.value.articleDescr()
                     val conceptSymbol = result.value.conceptDescr()
-                    println("Index: $index, ART: $articleSymbol, CON: $conceptSymbol")
+                    println("Index: $index, CODE: ${result.value.article.value}, ART: $articleSymbol, CON: $conceptSymbol")
                 }
                 is Err -> {
                     val articleSymbol = result.error.articleDescr()
                     val conceptSymbol = result.error.conceptDescr()
                     val errorValue = result.error.description()
-                    println("Index: $index, ART: $articleSymbol, CON: $conceptSymbol, Error: $errorValue")
+                    println("Index: $index, CODE: ${result.error.article.value}, ART: $articleSymbol, CON: $conceptSymbol, Error: $errorValue")
                 }
             }
         }
